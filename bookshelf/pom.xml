@@ -33,12 +33,13 @@ Copyright 2015 Google Inc. All Rights Reserved.
   <!-- [START config] -->
   <properties>
     <bookshelf.storageType>datastore</bookshelf.storageType>   <!-- datastore or cloudsql -->
-    <bookshelf.bucket></bookshelf.bucket>
+    <bookshelf.bucket>bookshelf-demo-1-images</bookshelf.bucket>
+                  <!--gs://bookshelf-demo-1/
+-->
+    <callback.host>bookshelf-demo-1.appspot.com</callback.host> <!-- Typically projectname.appspot.com -->
 
-    <callback.host>PROJECTID.appspot.com</callback.host> <!-- Typically projectname.appspot.com -->
-
-    <bookshelf.clientID></bookshelf.clientID>             <!-- for User Authentication -->
-    <bookshelf.clientSecret></bookshelf.clientSecret> <!-- from g.co/cloud/console -->
+    <bookshelf.clientID>175236416795-2ns8187epdi8sgaheh4di8kk6h7aqlik.apps.googleusercontent.com</bookshelf.clientID>             <!-- for User Authentication -->
+    <bookshelf.clientSecret>PTES7yzRIAhI2N51dzc6vIue</bookshelf.clientSecret> <!-- from g.co/cloud/console -->
 
     <!-- Register in g.co/cloud/console -->
     <bookshelf.callback>https://${callback.host}/oauth2callback</bookshelf.callback>
@@ -162,7 +163,10 @@ Copyright 2015 Google Inc. All Rights Reserved.
         <groupId>com.google.appengine</groupId>
         <artifactId>gcloud-maven-plugin</artifactId>
         <version>2.0.9.111.v20160525</version>
-      </plugin>
+      <configuration>
+        <gcloud_directory>/home/mengxin/Applications/google-cloud-sdk</gcloud_directory>
+      </configuration>
+	</plugin>
 
       <plugin>
         <groupId>org.eclipse.jetty</groupId>
